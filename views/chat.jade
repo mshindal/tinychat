@@ -1,0 +1,24 @@
+//- The View for a chat window. Initially in the 'Disconnected' state.
+
+extends layout
+
+block content
+	#chatWrapper
+		.panel.panel-default#chatPanel
+			.panel-body#chat
+	#controlPanelWrapper
+		.input-group#chatGroup
+			input.form-control#chatBox(type="text")
+			span.input-group-btn
+				button.btn.btn-primary#sendButton(type="button") Send
+		.input-group#usernameGroup
+			input.form-control#usernameBox(type="text" placeholder="Username")
+			span.input-group-btn
+				button.btn.btn-default#setUsernameButton(type="button") Set
+		p: strong Welcome to Tinychat!
+		p Status: 
+			span.label.label-danger#statusLabel Disconnected
+
+block scripts
+	script(src="/socket.io/socket.io.js")
+	script(src="/js/chat.js")
