@@ -1,10 +1,5 @@
 @import 'bootstrap/bootstrap.less';
 
-html, body {
-	height: 100%;
-	width: 100%;
-}
-
 span.username {
 	font-weight: bold;
 }
@@ -13,57 +8,14 @@ span.username:after {
 	content: ": ";
 }
 
-#chatWrapper, #controlPanelWrapper {
-	position: absolute;
-	width: 100%;
-	padding: 1em;
+body {
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
-#controlPanelWrapper {
-	bottom: 0;
-	height: 20%;
-}
-
-#chatWrapper {
-	top: 0;
-	height: 80%;
-}
-
-#chatPanel {
-	height: 100%;
-}
-
+// viewport units break on some browsers
+// http://caniuse.com/#feat=viewport-units
 #chat {
-	height: 100%;
+	max-height: 80vh;
 	overflow-y: scroll;
-	overflow-x: hidden;
-}
-
-#statusLabel {
-	margin-bottom: 1em;
-}
-
-#chatGroup, #usernameGroup {
-	margin-bottom: 1em;
-}
-
-@media (min-width: @screen-sm) {
-	#chatWrapper, #controlPanelWrapper {
-		width: 80%;
-		margin-left: 10%;
-	}
-}
-
-@media (min-width: @screen-md) {
-	#chatWrapper, #controlPanelWrapper {
-		width: 60%;
-		margin-left: 20%;
-	}
-}
-
-@media (min-width: @screen-lg) {
-	#chatWrapper, #controlPanelWrapper {
-		width: 50%;
-		margin-left: 25%;
-	}
 }

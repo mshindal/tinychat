@@ -16,14 +16,6 @@ $('#sendButton').click(function() {
 	sendMsg();
 });
 
-$('#usernameBox').keyup(function(eventObject) {
-	if (eventObject.keyCode === 13) setUsername();
-});
-
-$('#setUsernameButton').click(function() {
-	setUsername();
-});
-
 socket.on('message', function(message) {
 	addMsg(message);
 });
@@ -92,12 +84,5 @@ function addMsg(message) {
 	new_message.append('<span class="content">' + message.content + '</span>');
 	$('#chat').append(new_message);
 	$('#chat').scrollTop($('#chat')[0].scrollHeight);
-	return true;
-}
-
-function setUsername() {
-	var newName = $('#usernameBox').val();
-	username = newName;
-	$('#usernameBox').val('');
 	return true;
 }
